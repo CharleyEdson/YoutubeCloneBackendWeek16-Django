@@ -7,8 +7,9 @@ import { KEY } from "../../localKey";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import VideoMapper from "../../components/VideoMapper/VideoMapper";
 
-const MainPage = () => {
+const MainPage = (props) => {
   const [videoSearch, setVideoSearch] = useState(DATA[0]["items"]);
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     let mounted = true;
@@ -20,24 +21,27 @@ const MainPage = () => {
 
   const fetchVideos = async () => {
     try {
+        console.log(search)
       let response = await axios.get(
-        `https://www.googleapis.com/youtube/v3/search?q=alex ovechkin&key=${KEY}&type=video&part=snippet&maxResults=7`
+        `https://www.googleapis.com/youtube/v3/search?q=${search}&key=${KEY}&type=video&part=snippet&maxResults=7`
       );
-      setVideoSearch(response.data);
-      console.log('THis ran')
-      console.log(response[0]["items"]);
+      
+      setVideoSearch(response.data.items);
+     
     } catch (error) {
-      console.log(error.response.items);
+      console.log(error);
     }
   };
 
-  console.log(videoSearch);
+  
 
   return (
     <div>
       <div>
-        <SearchBar />
+      <SearchBar fetchVideos={fetchVideos} search={search} setSearch={setSearch}/>
+        <div>
         <VideoMapper videos={videoSearch} />
+        </div>
       </div>
     </div>
   );

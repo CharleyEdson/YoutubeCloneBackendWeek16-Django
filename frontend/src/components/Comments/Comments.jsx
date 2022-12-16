@@ -8,7 +8,7 @@ const Comments = ({videoId}) => {
     const fetchComments = async (videoId) => {
         try {
             let response = await axios.get(`http://127.0.0.1:8000/api/comments?video_id=${videoId}`);
-            console.log('Comments:', response.data);
+     
             setComments(response.data)
         }
         catch (error) {
@@ -22,14 +22,15 @@ const Comments = ({videoId}) => {
 
     return ( 
         <div>
-            {console.log(comments)}
             {comments.length !== 0 ? (
                 comments.map((comment) => {
                     return (
                         <div>
-                            <h1>{comment.user.username}</h1>
+                            <h3>{comment.user.username}</h3>
                             <p>{comment.text}</p>
+                            <br></br>
                             </div>
+                            
                     );
                 })
             ) : (

@@ -1,5 +1,7 @@
 // General Imports
 import { Routes, Route } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+
 import "./App.css";
 
 // Pages Imports
@@ -14,11 +16,16 @@ import Footer from "./components/Footer/Footer";
 
 // Util Imports
 import PrivateRoute from "./utils/PrivateRoute";
+import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
+  const [search, setSearch] = useState("");
+
+
   return (
     <div>
       <Navbar />
+      
       <Routes>
         <Route exact path ="/" element={<MainPage />}/>
         {/* /* <Route
@@ -29,6 +36,7 @@ function App() {
             </PrivateRoute>
           }
         /> */}
+        
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
       </Routes>
