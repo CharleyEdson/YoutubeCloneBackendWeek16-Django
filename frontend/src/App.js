@@ -9,6 +9,8 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import MainPage from "./pages/MainPage/MainPage";
+import SearchResultsPage from "./pages/SearchResultsPage/SearchResultsPage";
+import VideoPage from "./pages/VideoPage/VideoPage";
 
 // Component Imports
 import Navbar from "./components/NavBar/NavBar";
@@ -19,7 +21,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
-  const [search, setSearch] = useState("");
+
 
 
   return (
@@ -27,7 +29,13 @@ function App() {
       <Navbar />
       
       <Routes>
-        <Route exact path ="/" element={<MainPage />}/>
+        <Route exact path ="/" element={<MainPage />}>
+          <Route path="searches" element={<SearchResultsPage />} >
+          <Route path=":videoId" element={<VideoPage />} />
+          </Route>
+        </Route>
+        <Route path="/register" element={<RegisterPage />} />
+        <Route path="/login" element={<LoginPage />} />
         {/* /* <Route
           path="/"
           element={
@@ -36,9 +44,7 @@ function App() {
             </PrivateRoute>
           }
         /> */}
-        
-        <Route path="/register" element={<RegisterPage />} />
-        <Route path="/login" element={<LoginPage />} />
+
       </Routes>
       <Footer />
     </div>
@@ -46,3 +52,10 @@ function App() {
 }
 
 export default App;
+
+
+//To Dos
+//Add Search component to the following pages: Main Page, Search Results Pages.
+//Make search bar Link to the searches page, and pass in props and data so it populates the searches page.
+//Add in clickability to the search results to then link to the videoPage. <iform> tags.
+// Need to add in ability to login and post comments
