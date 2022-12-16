@@ -19,20 +19,19 @@ function App() {
   return (
     <div>
       <Navbar />
-      <MainPage />
-
-      {/* <Routes>
-        <Route
+      <Routes>
+        <Route exact path ="/" element={<MainPage />}/>
+        {/* /* <Route
           path="/"
           element={
             <PrivateRoute>
               <HomePage />
             </PrivateRoute>
           }
-        />
+        /> */}
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
-      </Routes> */}
+      </Routes>
       <Footer />
     </div>
   );
