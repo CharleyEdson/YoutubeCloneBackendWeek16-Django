@@ -31,7 +31,7 @@ function App() {
       <Routes>
         <Route exact path ="/" element={<MainPage />}>
           <Route path="searches" element={<SearchResultsPage />} >
-          <Route path=":videoId" element={<VideoPage />} />
+          <Route path="searches/:videoId" element={<VideoPage />} />
           </Route>
         </Route>
         <Route path="/register" element={<RegisterPage />} />

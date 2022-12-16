@@ -23,7 +23,7 @@ const SearchBar = (props) => {
         ></input>
         <div>
         <button onClick={()=> props.fetchVideos()}>
-            <Link to={'/'}>Click Here to Search</Link>
+            <Link to={'/searches'}>Click Here to Search</Link>
           
         </button>
         </div>
