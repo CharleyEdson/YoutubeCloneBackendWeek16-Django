@@ -29,11 +29,9 @@ function App() {
       <Navbar />
       
       <Routes>
-        <Route exact path ="/" element={<MainPage />}>
-          <Route path="searches" element={<SearchResultsPage />} >
-          <Route path="searches/:videoId" element={<VideoPage />} />
-          </Route>
-        </Route>
+        <Route exact path ="/" element={<MainPage />}/>
+        <Route path="searches" element={<SearchResultsPage />} />
+        <Route path="/searches/:videoId" element={<VideoPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         {/* /* <Route

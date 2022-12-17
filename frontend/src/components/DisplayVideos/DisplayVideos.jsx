@@ -15,9 +15,8 @@ const DisplayVideos = ({ video, index }) => {
         <ul>{video.snippet.title}</ul>
       </div>
       <p>{video.id.videoId}</p>
-      <Link to={`searches/${video.id.videoId}`}><img src={video.snippet.thumbnails.default.url} />
+      <Link to={`/searches/${video.id.videoId}`}><img src={video.snippet.thumbnails.default.url} />
       </Link>
-   
       <Comments videoId={video.id.videoId}/>
       <br></br>
     </div>
