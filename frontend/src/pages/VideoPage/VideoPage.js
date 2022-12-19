@@ -24,17 +24,23 @@ const VideoPage = (props) => {
       `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${KEY}`
     );
     
-    console.log(video)
     setVideo(response['data']['items'][0]);
+    console.log(video)
+
+    
 
   }
 
+
   return (
     <div>
-      {/* {video.id}
+      {video.id}
       <div>
-      {video.snippet.title}
-      </div> */}
+      {/* {video.snippet.title} */}
+      <iframe id="ytplayer" type="text/html" width="640" height="360"
+  src={`https://www.youtube.com/embed/${video.id}?autoplay=1&origin=http://example.com`}
+  frameborder="0"></iframe>
+      </div>
     </div>
   );
 };

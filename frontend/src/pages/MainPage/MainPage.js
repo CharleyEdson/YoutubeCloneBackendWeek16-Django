@@ -26,6 +26,7 @@ const MainPage = (props) => {
         `https://www.googleapis.com/youtube/v3/search?q=${search}&key=${KEY}&type=video&part=snippet&maxResults=7`
       );
       
+      console.log(response.data.items)
       setVideoSearch(response.data.items);
      
     } catch (error) {
