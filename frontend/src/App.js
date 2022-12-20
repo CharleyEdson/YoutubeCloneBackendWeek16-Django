@@ -9,7 +9,7 @@ import HomePage from "./pages/HomePage/HomePage";
 import LoginPage from "./pages/LoginPage/LoginPage";
 import RegisterPage from "./pages/RegisterPage/RegisterPage";
 import MainPage from "./pages/MainPage/MainPage";
-import SearchResultsPage from "./pages/SearchResultsPage/SearchResultsPage";
+
 import VideoPage from "./pages/VideoPage/VideoPage";
 
 // Component Imports
@@ -30,8 +30,8 @@ function App() {
       
       <Routes>
         <Route exact path ="/" element={<MainPage />}/>
-        <Route path="searches" element={<SearchResultsPage />} />
-        <Route path="/searches/:videoId" element={<VideoPage />} />
+
+        <Route path="/:videoId" element={<VideoPage />} />
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         {/* /* <Route

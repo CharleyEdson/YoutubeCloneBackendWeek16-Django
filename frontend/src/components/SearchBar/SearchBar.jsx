@@ -3,14 +3,10 @@ import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
 
 const SearchBar = (props) => {
-
   function handleSubmit(event) {
     event.preventDefault();
   }
 
-
-
-  
   return (
     <div>
       <div> Search For Videos</div>
@@ -19,13 +15,12 @@ const SearchBar = (props) => {
           type="text"
           value={props.search}
           onChange={(event) => props.setSearch(event.target.value)}
-          
         ></input>
         <div>
-        <button onClick={()=> props.fetchVideos()}>
-            <Link to={'/searches'}>Click Here to Search</Link>
-          
-        </button>
+          <button onClick={() => props.fetchVideos()}>
+            Click Here To Search
+          </button>
+          <br></br>
         </div>
       </div>
     </div>
