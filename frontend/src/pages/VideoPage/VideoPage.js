@@ -30,14 +30,12 @@ const VideoPage = (props) => {
     setVideo(response["data"]["items"][0]);
   }
 
-  //Insert function to call API for related videos
   async function getRelatedVideos() {
     const responses = await axios.get(
     `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoId}&type=video&key=${KEY}`
     );
-    console.log('test')
-    console.log(responses)
     setRelatedVideos(responses['data']['items']);
+    console.log(relatedVideos)
   }
 
   return (
