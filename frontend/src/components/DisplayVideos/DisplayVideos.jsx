@@ -14,10 +14,12 @@ const DisplayVideos = ({ video, index }) => {
       <div>
         <ul>{video.snippet.title}</ul>
       </div>
-      <p>{video.id.videoId}</p>
-      <Link to={`/${video.id.videoId}`}><img src={video.snippet.thumbnails.default.url} />
+      {/* <p>{video.id.videoId}</p> */}
+      <Link to={`/${video.id.videoId}`}><img src={video.snippet.thumbnails.medium.url} />
       </Link>
-      <Comments videoId={video.id.videoId}/>
+      {/* <Comments videoId={video.id.videoId}/> */}
+      <br></br>
+      <br></br>
       <br></br>
     </div>
   );

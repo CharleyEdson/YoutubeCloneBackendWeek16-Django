@@ -15,12 +15,15 @@ const VideoPage = (props) => {
     if (mounted) {
       getVideoInfo();
       getRelatedVideos();
-      console.log(relatedVideos, 'use effect for video page');
     }
     return () => (mounted = false);
-  }, []);
+  }, [videoId]);
 
-  
+//Use this if it runs a continous loop.
+//   useEffect(() => {
+//     getVideoInfo();
+//     getRelatedVideos();
+// }, [videoId]);
 
   async function getVideoInfo() {
     const response = await axios.get(
@@ -28,11 +31,13 @@ const VideoPage = (props) => {
     );
 
     setVideo(response["data"]["items"][0]);
+    console.log(response["data"]["items"][0])
+    console.log(video)
   }
 
   async function getRelatedVideos() {
     const responses = await axios.get(
-    `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoId}&type=video&key=${KEY}`
+    `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoId}&type=video&key=${KEY}&part=snippet`
     );
     setRelatedVideos(responses['data']['items']);
     console.log(relatedVideos)
@@ -41,7 +46,7 @@ const VideoPage = (props) => {
   return (
     <div>
       <div>
-        {/* {video.snippet.title}  Can't get this to load after the first time. Something to do with axios. */}
+        {/* {video.snippet.title}   */}
         <div>
           <br></br>
         </div>
@@ -54,11 +59,11 @@ const VideoPage = (props) => {
           //   src={`https://www.youtube.com/embed/${video.id}?autoplay=1&origin=http://example.com`}
           frameBorder="0"
         ></iframe>
-        <VideoPageComments videoId={videoId}/>
+        <VideoPageComments videoId={video.id} />
       </div>
       <div>
         
-        {/* <VideoMapper videos={relatedVideos} /> */}
+        <VideoMapper videos={relatedVideos} />
         
       </div>
     </div>

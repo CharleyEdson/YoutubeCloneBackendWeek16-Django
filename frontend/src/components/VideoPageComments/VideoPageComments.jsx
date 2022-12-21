@@ -42,8 +42,8 @@ const VideoPageComments = (props) => {
       dislikes: dislikes,
       text: commentsText,
     };
+    //After I post a comment, can I remove the text to make it blank to post a new commnet?
     postComments(newComment);
-    console.log(newComment);
   }
 
   const postComments = async (newComment) => {
@@ -89,12 +89,14 @@ const VideoPageComments = (props) => {
         </div>
       </div>
       <div>
-        {comments.map((comment) => {
+        {comments.map((comment, index) => {
           return (
-            <div>
-              <div key={comment.video_id}>
+            <div key={index}>
+              <div >
+                <p>{comment.index}</p>
                 <h1>{comment.user.username}</h1>
                 <p>{comment.text}</p>
+                <br></br>
               </div>
             </div>
           );
