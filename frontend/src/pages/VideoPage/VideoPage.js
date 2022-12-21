@@ -5,6 +5,7 @@ import axios from "axios";
 import VideoMapper from "../../components/VideoMapper/VideoMapper";
 import VideoPageComments from "../../components/VideoPageComments/VideoPageComments";
 
+
 const VideoPage = (props) => {
   const [video, setVideo] = useState([]);
   const [relatedVideos, setRelatedVideos] = useState([]);
@@ -19,11 +20,6 @@ const VideoPage = (props) => {
     return () => (mounted = false);
   }, [videoId]);
 
-//Use this if it runs a continous loop.
-//   useEffect(() => {
-//     getVideoInfo();
-//     getRelatedVideos();
-// }, [videoId]);
 
   async function getVideoInfo() {
     const response = await axios.get(
@@ -31,8 +27,7 @@ const VideoPage = (props) => {
     );
 
     setVideo(response["data"]["items"][0]);
-    console.log(response["data"]["items"][0])
-    console.log(video)
+
   }
 
   async function getRelatedVideos() {
@@ -40,8 +35,9 @@ const VideoPage = (props) => {
     `https://www.googleapis.com/youtube/v3/search?relatedToVideoId=${videoId}&type=video&key=${KEY}&part=snippet`
     );
     setRelatedVideos(responses['data']['items']);
-    console.log(relatedVideos)
   }
+
+  
 
   return (
     <div>
