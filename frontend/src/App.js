@@ -21,7 +21,7 @@ import PrivateRoute from "./utils/PrivateRoute";
 import SearchBar from "./components/SearchBar/SearchBar";
 
 function App() {
-  
+
   return (
     <div>
       <Navbar />
@@ -50,16 +50,7 @@ function App() {
 export default App;
 
 
-//To Dos
-//Add Search component to the following pages: Main Page, Search Results Pages.
-//Make search bar Link to the searches page, and pass in props and data so it populates the searches page.
-//Add in clickability to the search results to then link to the videoPage. <iform> tags.
-// Need to add in ability to login and post comments
-
 //KNOWN BUGS
-//1)When I click a related video, and the current video has comments, 
-//the state of the comments doesn't refresh and it shows the old comments on the new video.
-//The problem seems to be the useparams isn't passing in the new video's videoID.
 
-//2) Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
+//1) Uncaught (in promise) Error: A listener indicated an asynchronous response by returning true, but the message channel closed before a response was received
 //Happens when I leave it on one page for too long.

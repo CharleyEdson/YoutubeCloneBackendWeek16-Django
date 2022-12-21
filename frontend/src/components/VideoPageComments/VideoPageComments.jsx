@@ -9,7 +9,6 @@ const VideoPageComments = (props) => {
   const [comments, setComments] = useState([]);
   const [commentsText, setCommentsText] = useState([""]);
   const { videoId } = useParams();
-  //   const { user } = useContext(AuthContext);
   const [likes, setLikes] = useState(0);
   const [dislikes, setDisLikes] = useState(0);
   const [user, token] = useAuth();
@@ -20,7 +19,7 @@ const VideoPageComments = (props) => {
       fetchComments();
     }
     return () => (mounted = false);
-  }, []);
+  }, [videoId]);
 
   const fetchComments = async () => {
     try {
