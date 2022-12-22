@@ -1,0 +1,18 @@
+.fontcolor {
+    color: steelblue;
+    display: flex;
+}
+
+.username {
+    color: steelblue;
+    font-size: x-small;
+    font-family: emoji;
+}
+
+.commentsbox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: flex-start;
+}

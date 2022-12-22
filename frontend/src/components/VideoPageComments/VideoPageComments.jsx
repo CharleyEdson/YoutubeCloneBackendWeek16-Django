@@ -4,6 +4,7 @@ import AuthContext from "../../context/AuthContext";
 import { useContext } from "react";
 import { useParams } from "react-router-dom";
 import useAuth from "../../hooks/useAuth";
+import './VideoPageComments.css'
 
 const VideoPageComments = (props) => {
   const [comments, setComments] = useState([]);
@@ -66,9 +67,9 @@ const VideoPageComments = (props) => {
   };
 
   return (
-    <div>
+    <div className="commentsbox">
       <br></br>
-      <h1>Comments</h1>
+      <h1 className="fontcolor">Comments</h1>
       <div>
         <div>
           {user ? (
@@ -79,11 +80,11 @@ const VideoPageComments = (props) => {
                   value={commentsText}
                   onChange={(event) => setCommentsText(event.target.value)}
                 ></input>
-                <button type="submit">Click Here to Post Your Comment</button>
+                <button type="submit" >Post Comment</button>
               </form>
             </div>
           ) : (
-            <div>You must be logged in to Post comments </div>
+            <div className="fontcolor">You must be logged in to Post comments </div>
           )}
         </div>
       </div>
@@ -91,7 +92,7 @@ const VideoPageComments = (props) => {
         {comments.map((comment, index) => {
           return (
             <div key={index}>
-              <div >
+              <div className="username">
                 <p>{comment.index}</p>
                 <h1>{comment.user.username}</h1>
                 <p>{comment.text}</p>

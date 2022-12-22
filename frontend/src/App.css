@@ -21,11 +21,13 @@ button {
   background-color: transparent;
   border: 2px solid steelblue;
   color: steelblue;
+  background-color: whitesmoke;
   font-size: 1rem;
   font-family: inherit;
-  max-width: 100px;
+  max-width: 150px;
   padding: 0.5rem 0.5rem;
 }
+
 
 button:hover {
   cursor: pointer;

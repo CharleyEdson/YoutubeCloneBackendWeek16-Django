@@ -1,0 +1,27 @@
+.videosbox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    align-items: center;
+    width: 80%;
+}
+
+.videoframe {
+    width: 80%;
+  
+}
+
+.videobox {
+    color: steelblue;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+    align-items: flex-start;
+    justify-content: flex-end;
+}
+
+.image {
+    padding-right: 10px;
+    border-radius: 25px;
+}

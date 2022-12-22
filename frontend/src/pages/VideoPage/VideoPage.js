@@ -4,6 +4,7 @@ import { KEY } from "../../localKey";
 import axios from "axios";
 import VideoMapper from "../../components/VideoMapper/VideoMapper";
 import VideoPageComments from "../../components/VideoPageComments/VideoPageComments";
+import './VideoPage.css'
 
 
 const VideoPage = (props) => {
@@ -42,10 +43,13 @@ const VideoPage = (props) => {
   return (
     <div>
       <div>
+        <div className="videocontainer">
+            <div>
         {/* {video.snippet.title}   */}
         <div>
           <br></br>
         </div>
+    
         <iframe
           id="ytplayer"
           type="text/html"
@@ -56,10 +60,14 @@ const VideoPage = (props) => {
           frameBorder="0"
         ></iframe>
         <VideoPageComments videoId={video.id} />
+        </div>
+        <VideoMapper videos={relatedVideos} />
+        </div>
+        
       </div>
       <div>
         
-        <VideoMapper videos={relatedVideos} />
+        
         
       </div>
     </div>

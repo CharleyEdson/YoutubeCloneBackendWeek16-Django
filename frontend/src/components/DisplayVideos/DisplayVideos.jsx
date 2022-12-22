@@ -2,25 +2,25 @@ import React from "react";
 import { useEffect, useState } from "react";
 import Comments from "../Comments/Comments";
 import { Link } from "react-router-dom";
+import "./DisplayVideos.css";
 
-
-
-const DisplayVideos = ({ video}) => {
-
- 
+const DisplayVideos = ({ video }) => {
   return (
-    <div>
-      
-      <div>
-        <ul>{video.snippet.title}</ul>
+    <div className="videosbox">
+      <div className="videoframe">
+      <div className="videobox">
+        <ul >{video.snippet.title}</ul>
+      {/* </div>
+      <div> */}
+        <Link to={`/${video.id.videoId}`}>
+          <div className="image">
+          <img className='image' src={video.snippet.thumbnails.medium.url} />
+          </div>
+        </Link>
       </div>
-      {/* <p>{video.id.videoId}</p> */}
-      <Link to={`/${video.id.videoId}`}><img src={video.snippet.thumbnails.medium.url} />
-      </Link>
-      {/* <Comments videoId={video.id.videoId}/> */}
       <br></br>
       <br></br>
-      <br></br>
+      </div>
     </div>
   );
 };

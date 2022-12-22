@@ -1,0 +1,17 @@
+.searchbar {
+    width: 40rem;
+    margin: auto;
+    text-align: center;
+}
+
+.searchmessage {
+    width: 100%;
+    text-align: center;
+}
+
+.searchbarform{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
