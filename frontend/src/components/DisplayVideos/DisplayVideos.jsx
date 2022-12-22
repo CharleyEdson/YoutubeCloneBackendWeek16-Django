@@ -9,7 +9,7 @@ const DisplayVideos = ({ video }) => {
     <div className="videosbox">
       <div className="videoframe">
       <div className="videobox">
-        <ul >{video.snippet.title}</ul>
+        <ul >{video.snippet.title.replace(/&#39;|&amp;/gi,"'")}</ul>
       {/* </div>
       <div> */}
         <Link to={`/${video.id.videoId}`}>
