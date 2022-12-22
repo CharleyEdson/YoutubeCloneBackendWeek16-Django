@@ -24,10 +24,7 @@ const VideoPage = (props) => {
     const response = await axios.get(
       `https://www.googleapis.com/youtube/v3/videos?part=snippet&id=${videoId}&key=${KEY}`
     );
-    console.log(response)
     setVideo(response["data"]["items"][0]);
-    console.log(response["data"]["items"][0])
-    console.log(video)
   }
 
   async function getRelatedVideos() {
@@ -52,11 +49,12 @@ const VideoPage = (props) => {
               type="text/html"
               width="640"
               height="360"
-              src={`https://www.youtube-nocookie.com/embed/${video.id}?autoplay=1&origin=http://example.com`}
+              src={`https://www.youtube-nocookie.com/embed/${videoId}?autoplay=1&origin=http://example.com`}
               //   src={`https://www.youtube.com/embed/${video.id}?autoplay=1&origin=http://example.com`}
               frameBorder="0"
             ></iframe>
             <VideoPageComments videoId={video.id} />
+            <br></br>
           </div>
           <VideoMapper videos={relatedVideos} />
         </div>
