@@ -26,6 +26,8 @@ const VideoPage = (props) => {
     );
     console.log(response)
     setVideo(response["data"]["items"][0]);
+    console.log(response["data"]["items"][0])
+    console.log(video)
   }
 
   async function getRelatedVideos() {
