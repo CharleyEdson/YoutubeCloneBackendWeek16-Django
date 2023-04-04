@@ -6,6 +6,7 @@ import { DATA } from "../../data";
 import { KEY } from "../../localKey";
 import SearchBar from "../../components/SearchBar/SearchBar";
 import VideoMapper from "../../components/VideoMapper/VideoMapper";
+import './MainPage.css'
 
 const MainPage = (props) => {
   const [videoSearch, setVideoSearch] = useState(DATA[0]["items"]);
@@ -37,7 +38,7 @@ const MainPage = (props) => {
   
 
   return (
-    <div>
+    <div className="background">
       <div>
       <SearchBar fetchVideos={fetchVideos} search={search} setSearch={setSearch}/>
         <div>

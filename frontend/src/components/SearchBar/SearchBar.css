@@ -1,7 +1,9 @@
 .searchbar {
     width: 40rem;
     margin: auto;
+    display: flex;
     text-align: center;
+    flex-direction: column;
 }
 
 .searchmessage {
@@ -13,5 +15,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 

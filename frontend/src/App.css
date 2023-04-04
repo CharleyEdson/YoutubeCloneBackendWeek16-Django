@@ -26,6 +26,8 @@ button {
   font-family: inherit;
   max-width: 150px;
   padding: 0.5rem 0.5rem;
+  border-radius: 25px;
+
 }
 
 
@@ -58,3 +60,5 @@ button:hover {
   padding: 3px 7px;
   font-size: 17px;
 }
+
+background: aliceblue;

@@ -18,10 +18,12 @@ const SearchBar = (props) => {
             value={props.search}
             onChange={(event) => props.setSearch(event.target.value)}
           ></input>
+          <br></br>
           <div>
             <button onClick={() => props.fetchVideos()}>
               Click Here To Search
             </button>
+            <br></br>
             <br></br>
           </div>
         </div>
